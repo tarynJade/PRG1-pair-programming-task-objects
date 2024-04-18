@@ -24,7 +24,6 @@ const library = [
         isLoaned: false
     }];
 
-
 function loanStatus(library) {
 
   for (let i = 0; i < library.length; i++) 
@@ -40,5 +39,32 @@ function loanStatus(library) {
 
 }
 
-
 loanStatus(library);
+
+function getBooksbyTitle(title){
+    for (let i = 0; i < library.length; i++){
+        if(library[i].title === title){
+            console.log(`Here is your book: ${title}`)
+        }
+     }
+}
+
+getBooksbyTitle("The Road Ahead")
+
+function totalBooksOnLoan(){
+    let loaned = 0
+    let notLoaned = 0 
+    for (let i = 0; i < library.length; i++){
+        if(library[i].isLoaned){
+            loaned++;
+        }else{
+            notLoaned++;
+        }
+    }
+    console.log(`There are ${loaned} books on loan and There are ${notLoaned} books not loaned`)
+}
+
+totalBooksOnLoan(library)
+
+
+   
